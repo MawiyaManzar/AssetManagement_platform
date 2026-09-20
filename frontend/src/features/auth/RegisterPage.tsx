@@ -36,13 +36,14 @@ export default function RegisterPage() {
 
     setIsLoading(true);
     try {
-      // TODO: Replace with real API call
+      // Per AssetFlow Problem Statement: Signup creates Employee account only.
+      // Admin promotes to Department Head or Asset Manager in Employee Directory.
       const mockUser = {
         id: 'user_' + Math.random().toString(36).substring(2, 9),
         name,
         email,
-        role: role as 'USER' | 'MANAGER' | 'ADMIN',
-        status: 'ACTIVE' as const,
+        role: 'employee' as const,
+        status: 'active' as const,
         emailVerified: true,
         createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString(),
@@ -67,15 +68,14 @@ export default function RegisterPage() {
             ← Back to Home
           </Link>
           <h2 className={styles.title}>Create Account</h2>
-          <p className={styles.subtitle}>Get started with your free account</p>
+          <p className={styles.subtitle}>Join AssetFlow as an employee</p>
         </div>
 
         <form onSubmit={handleSubmit} className={styles.form} noValidate>
           <Input label="Full Name" placeholder="John Doe" value={name} onChange={(e) => setName(e.target.value)} error={errors.name} />
           <Input label="Email Address" type="email" placeholder="name@example.com" value={email} onChange={(e) => setEmail(e.target.value)} error={errors.email} />
           <Input label="Password" type="password" placeholder="••••••••" value={password} onChange={(e) => setPassword(e.target.value)} error={errors.password} />
-          <Select label="Account Type" value={role} onChange={(e) => setRole(e.target.value)} options={[{ value: 'USER', label: 'User' }, { value: 'MANAGER', label: 'Manager' }]} />
-          <Button type="submit" size="lg" fullWidth isLoading={isLoading}>Create Account</Button>
+          <Button type="submit" size="lg" fullWidth isLoading={isLoading}>Create Employee Account</Button>
         </form>
 
         <div className={styles.footer}>

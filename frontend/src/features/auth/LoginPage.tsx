@@ -35,12 +35,20 @@ export default function LoginPage() {
     setIsLoading(true);
     try {
       // TODO: Replace with real API call
+      const role: 'admin' | 'asset_manager' | 'department_head' | 'employee' = email.includes('admin')
+        ? 'admin'
+        : email.includes('manager')
+        ? 'asset_manager'
+        : email.includes('head')
+        ? 'department_head'
+        : 'employee';
+
       const mockUser = {
         id: 'user_' + Math.random().toString(36).substring(2, 9),
         name: email.split('@')[0],
         email,
-        role: email.includes('admin') ? 'ADMIN' as const : email.includes('manager') ? 'MANAGER' as const : 'USER' as const,
-        status: 'ACTIVE' as const,
+        role,
+        status: 'active' as const,
         emailVerified: true,
         createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString(),
@@ -72,14 +80,16 @@ export default function LoginPage() {
             ← Back to Home
           </Link>
           <h2 className={styles.title}>Welcome Back</h2>
-          <p className={styles.subtitle}>Log in to access your account</p>
+          <p className={styles.subtitle}>Log in to access your AssetFlow ERP</p>
         </div>
 
         <form onSubmit={handleSubmit} className={styles.form} noValidate>
           <div className={styles.demoSection}>
             <span className={styles.demoLabel}>Demo Quick-Fill:</span>
             <div className={styles.demoButtons}>
-              <button type="button" className={styles.demoChip} onClick={() => quickFill('user@demo.com')}>👤 User</button>
+              <button type="button" className={styles.demoChip} onClick={() => quickFill('employee@demo.com')}>👤 Employee</button>
+              <button type="button" className={styles.demoChip} onClick={() => quickFill('manager@demo.com')}>📦 Asset Manager</button>
+              <button type="button" className={styles.demoChip} onClick={() => quickFill('head@demo.com')}>🏢 Dept Head</button>
               <button type="button" className={styles.demoChip} onClick={() => quickFill('admin@demo.com')}>👑 Admin</button>
             </div>
           </div>

@@ -1,20 +1,10 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 
-export type UserRole = 'USER' | 'MANAGER' | 'ADMIN';
-export type UserStatus = 'ACTIVE' | 'BANNED';
+import type { User, UserRole, UserStatus } from '../types';
 
-export interface AuthUser {
-  id: string;
-  name: string;
-  email: string;
-  avatar?: string;
-  phone?: string;
-  role: UserRole;
-  status: UserStatus;
-  emailVerified: boolean;
-  createdAt?: string;
-}
+export type { UserRole, UserStatus };
+export type AuthUser = User;
 
 interface AuthState {
   user: AuthUser | null;
