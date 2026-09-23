@@ -1,0 +1,417 @@
+/* ── Asset Audit — Flat Odoo Theme ── */
+
+.page {
+  max-width: var(--content-max-width);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.headerRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.pageTitle {
+  font-size: var(--text-xl);
+  font-weight: var(--font-semi);
+  color: var(--color-text);
+  margin-bottom: var(--space-1);
+}
+
+.subTitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+/* ── Audit Cycle Banner (Screen 8 wireframe) ── */
+.cycleBanner {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.cycleTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.cycleInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.cycleBadge {
+  font-size: var(--text-xs);
+  font-weight: var(--font-semi);
+  text-transform: uppercase;
+  color: var(--color-primary);
+  background-color: var(--color-primary-light);
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-xs);
+}
+
+.cycleTitle {
+  font-size: var(--text-base);
+  font-weight: var(--font-semi);
+  color: var(--color-text);
+}
+
+.auditorMeta {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.auditorMeta strong {
+  color: var(--color-text);
+}
+
+.progressRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.progressBarWrapper {
+  flex: 1;
+  height: 8px;
+  background-color: var(--color-surface-2);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.progressBar {
+  height: 100%;
+  background-color: var(--color-primary);
+  transition: width var(--transition-base);
+}
+
+.progressText {
+  font-size: var(--text-xs);
+  font-weight: var(--font-medium);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+/* ── Filter Tabs ── */
+.tabFilterRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.tabBtn {
+  padding: 0.45rem 0.85rem;
+  font-size: var(--text-xs);
+  font-weight: var(--font-semi);
+  color: var(--color-text-muted);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.tabBtnActive {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border-color: var(--color-primary);
+}
+
+/* ── Table Card ── */
+.tableCard {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: var(--text-sm);
+}
+
+.table th {
+  padding: 0.75rem 1.25rem;
+  font-size: var(--text-xs);
+  font-weight: var(--font-semi);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  background-color: var(--color-surface-2);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.table td {
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: middle;
+}
+
+.tableRow:last-child td {
+  border-bottom: none;
+}
+
+.assetCell {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.tagBadge {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: var(--font-semi);
+  color: var(--color-primary);
+  background-color: var(--color-primary-light);
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-xs);
+}
+
+.assetName {
+  font-weight: var(--font-medium);
+  color: var(--color-text);
+}
+
+.locationCell {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+/* ── Verification Action Button Group ── */
+.btnGroup {
+  display: inline-flex;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xs);
+  overflow: hidden;
+}
+
+.statusBtn {
+  padding: 0.35rem 0.75rem;
+  font-size: 11px;
+  font-weight: var(--font-semi);
+  color: var(--color-text-muted);
+  background-color: var(--color-surface-2);
+  border-right: 1px solid var(--color-border);
+  transition: all var(--transition-fast);
+}
+
+.statusBtn:last-child {
+  border-right: none;
+}
+
+.statusBtn:hover {
+  background-color: #E2E8F0;
+  color: var(--color-text);
+}
+
+.activeVerified {
+  background-color: #28A745 !important;
+  color: #ffffff !important;
+}
+
+.activeMissing {
+  background-color: #DC3545 !important;
+  color: #ffffff !important;
+}
+
+.activeDamaged {
+  background-color: #FFC107 !important;
+  color: #212529 !important;
+}
+
+/* ── Discrepancy Box (Screen 8 wireframe) ── */
+.discrepancyBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.25rem;
+  background-color: #FFF9DB;
+  border: 1px solid #FFE066;
+  border-left: 4px solid #F59F00;
+  border-radius: var(--radius-sm);
+  color: #664D03;
+}
+
+.discrepancyText {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+}
+
+/* ── Action Row ── */
+.actionRow {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: var(--space-2);
+}
+
+.closeCycleBtn {
+  padding: 0.6rem 1.25rem;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semi);
+  box-shadow: var(--shadow-xs);
+  transition: background-color var(--transition-fast);
+}
+
+.closeCycleBtn:hover {
+  background-color: var(--color-primary-hover);
+}
+
+/* ── Modal ── */
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-modal);
+  padding: var(--space-4);
+}
+
+.modalContent {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  width: 100%;
+  max-width: 480px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-surface-2);
+}
+
+.modalTitle {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semi);
+  color: var(--color-text);
+}
+
+.closeModalBtn {
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--color-text-muted);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalBody {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.modalDesc {
+  font-size: var(--text-sm);
+  color: var(--color-text);
+}
+
+.summaryMetrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+
+.metricBox {
+  background-color: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.2rem;
+}
+
+.metricSuccess {
+  border-color: #C6F6D5;
+  background-color: #F0FFF4;
+  color: #22543D;
+}
+
+.metricDanger {
+  border-color: #FED7D7;
+  background-color: #FFF5F5;
+  color: #742A2A;
+}
+
+.metricVal {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+}
+
+.metricLbl {
+  font-size: 10px;
+  font-weight: var(--font-semi);
+  text-transform: uppercase;
+}
+
+.auditNote {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+.modalActions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-surface-2);
+}
+
+.cancelBtn {
+  padding: 0.5rem 1rem;
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: #ffffff;
+}
+
+.submitBtn {
+  padding: 0.5rem 1.25rem;
+  font-size: var(--text-sm);
+  font-weight: var(--font-semi);
+  color: #ffffff;
+  background-color: var(--color-primary);
+  border-radius: var(--radius-sm);
+}

@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 /* ---- Lazy Loaded Pages ---- */
 const LandingPage            = lazy(() => import('../features/landing/LandingPage'));
@@ -8,20 +8,19 @@ const RegisterPage           = lazy(() => import('../features/auth/RegisterPage'
 const DashboardLayout        = lazy(() => import('../components/layout/DashboardLayout'));
 const DashboardPage          = lazy(() => import('../features/dashboard/DashboardPage'));
 const OrganizationSetupPage  = lazy(() => import('../features/organization/OrganizationSetupPage'));
+const AssetsPage             = lazy(() => import('../features/assets/AssetsPage'));
+const AllocationPage         = lazy(() => import('../features/allocation/AllocationPage'));
+const ResourceBookingPage    = lazy(() => import('../features/booking/ResourceBookingPage'));
+const MaintenancePage        = lazy(() => import('../features/maintenance/MaintenancePage'));
+const AuditPage              = lazy(() => import('../features/audit/AuditPage'));
+const ReportsPage            = lazy(() => import('../features/reports/ReportsPage'));
+const NotificationsPage      = lazy(() => import('../features/notifications/NotificationsPage'));
 
 /* ---- Fallback Spinner ---- */
 const PageLoader = () => (
   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100vh', backgroundColor: 'var(--color-bg, #F8F9FB)' }}>
     <div style={{ width: 36, height: 36, border: '3px solid #DEE2E6', borderTopColor: '#714B67', borderRadius: '50%', animation: 'spin 0.8s linear infinite' }} />
     <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
-  </div>
-);
-
-/* ---- Placeholder for routes not yet built ---- */
-const PlaceholderPage = ({ title }: { title: string }) => (
-  <div style={{ padding: '2rem' }}>
-    <h1 style={{ fontSize: '1.5rem', fontWeight: 600, color: '#212529', marginBottom: '0.5rem' }}>{title}</h1>
-    <p style={{ color: '#6C757D', fontSize: '0.875rem' }}>This page is under construction.</p>
   </div>
 );
 
@@ -62,31 +61,31 @@ const router = createBrowserRouter([
       },
       {
         path: 'assets',
-        element: <PlaceholderPage title="Assets" />,
+        element: <Suspense fallback={<PageLoader />}><AssetsPage /></Suspense>,
       },
       {
         path: 'allocation',
-        element: <PlaceholderPage title="Allocation & Transfer" />,
+        element: <Suspense fallback={<PageLoader />}><AllocationPage /></Suspense>,
       },
       {
         path: 'booking',
-        element: <PlaceholderPage title="Resource Booking" />,
+        element: <Suspense fallback={<PageLoader />}><ResourceBookingPage /></Suspense>,
       },
       {
         path: 'maintenance',
-        element: <PlaceholderPage title="Maintenance" />,
+        element: <Suspense fallback={<PageLoader />}><MaintenancePage /></Suspense>,
       },
       {
         path: 'audit',
-        element: <PlaceholderPage title="Audit" />,
+        element: <Suspense fallback={<PageLoader />}><AuditPage /></Suspense>,
       },
       {
         path: 'reports',
-        element: <PlaceholderPage title="Reports" />,
+        element: <Suspense fallback={<PageLoader />}><ReportsPage /></Suspense>,
       },
       {
         path: 'notifications',
-        element: <PlaceholderPage title="Notifications" />,
+        element: <Suspense fallback={<PageLoader />}><NotificationsPage /></Suspense>,
       },
     ],
   },
