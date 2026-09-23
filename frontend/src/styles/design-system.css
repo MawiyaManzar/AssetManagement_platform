@@ -1,37 +1,45 @@
 /* ============================================================
-   Hackathon Template — Global Design System (Light Mode)
-   White primary + Purple secondary (Odoo-inspired)
+   AssetFlow — Global Design System (Light Mode)
+   Odoo-inspired flat purple theme — no gradients
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 /* ---- Color Tokens ----------------------------------------- */
 :root {
-  --color-primary:        #047857;
-  --color-primary-hover:  #065f46;
-  --color-primary-light:  rgba(4, 120, 87, 0.10);
-  --color-primary-soft:   rgba(4, 120, 87, 0.05);
+  --color-primary:        #714B67;
+  --color-primary-hover:  #5F3A56;
+  --color-primary-light:  rgba(113, 75, 103, 0.10);
+  --color-primary-soft:   rgba(113, 75, 103, 0.05);
 
-  --color-bg:             #F8FAFC;
+  --color-bg:             #F8F9FB;
   --color-bg-alt:         #FFFFFF;
   --color-surface:        #FFFFFF;
-  --color-surface-2:      #F1F5F9;
+  --color-surface-2:      #F1F3F7;
 
-  --color-border:         #E2E8F0;
-  --color-border-strong:  #CBD5E1;
+  --color-border:         #DEE2E6;
+  --color-border-strong:  #CED4DA;
 
-  --color-text:           #0F172A;
-  --color-text-muted:     #64748B;
-  --color-text-subtle:    #94A3B8;
+  --color-text:           #212529;
+  --color-text-muted:     #6C757D;
+  --color-text-subtle:    #ADB5BD;
 
-  --color-error:          #EF4444;
-  --color-error-light:    rgba(239, 68, 68, 0.08);
-  --color-warning:        #F59E0B;
-  --color-warning-light:  rgba(245, 158, 11, 0.08);
-  --color-success:        #10B981;
-  --color-success-light:  rgba(16, 185, 129, 0.08);
-  --color-info:           #0EA5E9;
-  --color-info-light:     rgba(14, 165, 233, 0.08);
+  --color-error:          #DC3545;
+  --color-error-light:    rgba(220, 53, 69, 0.08);
+  --color-warning:        #FFC107;
+  --color-warning-light:  rgba(255, 193, 7, 0.08);
+  --color-success:        #28A745;
+  --color-success-light:  rgba(40, 167, 69, 0.08);
+  --color-info:           #17A2B8;
+  --color-info-light:     rgba(23, 162, 184, 0.08);
+
+  /* Sidebar (dark panel) */
+  --sidebar-bg:           #2C2C3A;
+  --sidebar-bg-hover:     #3A3A4A;
+  --sidebar-bg-active:    #714B67;
+  --sidebar-text:         #B8B8CC;
+  --sidebar-text-active:  #FFFFFF;
+  --sidebar-border:       rgba(255, 255, 255, 0.06);
 }
 
 /* ---- Typography ------------------------------------------- */
